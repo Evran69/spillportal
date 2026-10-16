@@ -93,8 +93,14 @@
             line-height: 1.4;
         }
 
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+
         .play-btn {
-            display: inline-block;
+            flex: 2;
             text-align: center;
             background-color: var(--accent-color);
             color: #0f172a;
@@ -107,6 +113,32 @@
 
         .play-btn:hover {
             background-color: #7dd3fc;
+        }
+
+        .copy-btn {
+            flex: 1;
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+            padding: 0.75rem 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .copy-btn.copied {
+            background-color: #10b981;
+            color: white;
+            border-color: #10b981;
         }
 
         footer {
@@ -131,7 +163,10 @@
             <div class="game-info">
                 <h2 class="game-title">🛒 Fransk Butikk</h2>
                 <p class="game-description">Øv på nyttige ord, fraser og situasjoner knyttet til handel i en fransk butikk.</p>
-                <a href="https://evran69.github.io/butikk-fransk/" class="play-btn" target="_blank">Spill nå</a>
+                <div class="card-actions">
+                    <a href="https://evran69.github.io/butikk-fransk/" class="play-btn" target="_blank">Spill nå</a>
+                    <button class="copy-btn" onclick="copyLink('https://evran69.github.io/butikk-fransk/', this)">Kopier lenke</button>
+                </div>
             </div>
         </div>
 
@@ -140,7 +175,10 @@
             <div class="game-info">
                 <h2 class="game-title">☕ Fransk Kafé</h2>
                 <p class="game-description">Lær å bestille mat og drikke, og gjennomfør samtaler på en koselig fransk kafé.</p>
-                <a href="https://evran69.github.io/fransk-cafe/" class="play-btn" target="_blank">Spill nå</a>
+                <div class="card-actions">
+                    <a href="https://evran69.github.io/fransk-cafe/" class="play-btn" target="_blank">Spill nå</a>
+                    <button class="copy-btn" onclick="copyLink('https://evran69.github.io/fransk-cafe/', this)">Kopier lenke</button>
+                </div>
             </div>
         </div>
 
@@ -149,7 +187,10 @@
             <div class="game-info">
                 <h2 class="game-title">💎 Mysteriet med den blå diamanten</h2>
                 <p class="game-description">Følg sporene, løs språkgåter og avslør hvem som tok den blå diamanten.</p>
-                <a href="https://evran69.github.io/mysteriet-bla-diamanten/" class="play-btn" target="_blank">Spill nå</a>
+                <div class="card-actions">
+                    <a href="https://evran69.github.io/mysteriet-bla-diamanten/" class="play-btn" target="_blank">Spill nå</a>
+                    <button class="copy-btn" onclick="copyLink('https://evran69.github.io/mysteriet-bla-diamanten/', this)">Kopier lenke</button>
+                </div>
             </div>
         </div>
 
@@ -158,7 +199,10 @@
             <div class="game-info">
                 <h2 class="game-title">🗼 Escape Paris</h2>
                 <p class="game-description">Klarer du å løse utfordringene og rømme fra Paris ved hjelp av franskkunnskapene dine?</p>
-                <a href="https://evran69.github.io/escape-paris-fransk/" class="play-btn" target="_blank">Spill nå</a>
+                <div class="card-actions">
+                    <a href="https://evran69.github.io/escape-paris-fransk/" class="play-btn" target="_blank">Spill nå</a>
+                    <button class="copy-btn" onclick="copyLink('https://evran69.github.io/escape-paris-fransk/', this)">Kopier lenke</button>
+                </div>
             </div>
         </div>
     </main>
@@ -166,6 +210,22 @@
     <footer>
         <p>&copy; 2026 - Harøy skole / Marzena | Laget med GitHub Pages</p>
     </footer>
+
+    <script>
+        function copyLink(url, button) {
+            navigator.clipboard.writeText(url).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Kopiert! ✓';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Klarte ikke å kopiere lenke: ', err);
+            });
+        }
+    </script>
 
 </body>
 </html>
