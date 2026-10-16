@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marzenas Språkportal | Harøy skole</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem 1.5rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .game-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .game-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .game-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0 0 1.5rem 0;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .play-btn {
+            display: inline-block;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            font-weight: bold;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .play-btn:hover {
+            background-color: #7dd3fc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎓 Marzenas Språkportal</h1>
+        <p>Interaktive språkspill for elever ved Harøy skole</p>
+    </header>
+
+    <main class="container">
+        <!-- SPILLKORT 1 -->
+        <div class="game-card">
+            <div class="game-info">
+                <h2 class="game-title">Språkspill 1</h2>
+                <p class="game-description">Kort beskrivelse av hva spillet går ut på og hvilke språkferdigheter det treffer.</p>
+                <!-- Bytt ut lenken med URL-en til spillet ditt på GitHub Pages -->
+                <a href="https://dittbrukernavn.github.io/spill-1/" class="play-btn">Spill nå</a>
+            </div>
+        </div>
+
+        <!-- SPILLKORT 2 -->
+        <div class="game-card">
+            <div class="game-info">
+                <h2 class="game-title">Språkspill 2</h2>
+                <p class="game-description">Kort beskrivelse av spill nummer to.</p>
+                <a href="https://dittbrukernavn.github.io/spill-2/" class="play-btn">Spill nå</a>
+            </div>
+        </div>
+
+        <!-- Du kan kopiere .game-card-blokka for å legge til flere spill -->
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Harøy skole / Marzena | Laget med GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
